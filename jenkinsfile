@@ -1,0 +1,28 @@
+node {
+    // Checkout the source code from the repository
+    stage('Checkout') {
+        echo 'Checking out source code...'
+        checkout scm
+    }
+
+    // Build stage
+    stage('Build') {
+        echo 'Building...'
+        // Insert your build commands here
+        sh 'echo Building the project'
+    }
+
+    // Test stage
+    stage('Test') {
+        echo 'Testing...'
+        // Insert your test commands here
+        sh 'echo Running tests'
+    }
+
+    // Deploy stage
+    stage('Deploy') {
+        echo 'Deploying...'
+        // Insert your deployment commands here
+        sh 'echo Deploying the project'
+    }
+}
