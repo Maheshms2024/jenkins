@@ -2,11 +2,37 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello World') {
+        stage('Build') {
             steps {
-                echo 'Hello, Jenkins!'
+                echo 'Building the project on Windows...'
+                bat 'echo Building the project'
+                // Add your actual build commands here
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                bat 'echo Running tests'
+                // Add your actual test commands here
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                bat 'echo Deploying the project'
+                // Add your actual deployment commands here
             }
         }
     }
+
+    post {
+        always {
+            echo 'Cleaning up...'
+            // Add cleanup steps here
+        }
+    }
 }
+
 
