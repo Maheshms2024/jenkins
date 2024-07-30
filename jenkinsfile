@@ -1,28 +1,29 @@
-node {
-    // Checkout the source code from the repository
-    stage('Checkout') {
-        echo 'Checking out source code...'
-        checkout scm
-    }
+pipeline {
+    agent any
 
-    // Build stage
-    stage('Build') {
-        echo 'Building...'
-        // Insert your build commands here
-        sh 'echo Building the project'
-    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Add your build commands here, e.g., shell scripts or other commands
+                sh 'echo Building the project'
+            }
+        }
 
-    // Test stage
-    stage('Test') {
-        echo 'Testing...'
-        // Insert your test commands here
-        sh 'echo Running tests'
-    }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Add your test commands here
+                sh 'echo Running tests'
+            }
+        }
 
-    // Deploy stage
-    stage('Deploy') {
-        echo 'Deploying...'
-        // Insert your deployment commands here
-        sh 'echo Deploying the project'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add your deployment commands here
+                sh 'echo Deploying the project'
+            }
+        }
     }
 }
