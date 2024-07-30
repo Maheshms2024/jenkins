@@ -2,28 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Hello World') {
             steps {
-                echo 'Building...'
-                // Add your build commands here, e.g., shell scripts or other commands
-                sh 'echo Building the project'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Add your test commands here
-                sh 'echo Running tests'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Add your deployment commands here
-                sh 'echo Deploying the project'
+                echo 'Hello, Jenkins!'
             }
         }
     }
 }
+
